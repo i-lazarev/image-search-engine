@@ -6,7 +6,7 @@ class Preview extends Component {
       <div className="container">
         <div className="row">
           <img
-            style={{ width: "100vw" }}
+            style={{ width: "80vw" }}
             src={this.props.photoUrl}
             alt="this.props.tags"
           />
