@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Gallery extends Component {
   previewBtnClick = (index) => {
-    console.log(index);
+    this.props.preview(index);
   };
   render() {
     return (
