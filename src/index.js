@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   savePhotos = (results) => {
-    this.setState({ photos: results });
+    this.setState({ photos: results, choosenImageIndex: null });
   };
   render() {
     return (

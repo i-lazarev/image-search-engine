@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 class Preview extends Component {
+  componentWillUnmount = () => {
+    console.log("deleted from dom");
+  };
   render() {
     return (
       <div className="container">
