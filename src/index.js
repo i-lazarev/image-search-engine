@@ -7,6 +7,11 @@ import SearchBar from "./components/SearchBar";
 class App extends Component {
   state = {
     photos: [],
+    choosenImageIndex: null,
+  };
+
+  previewImage = (idx) => {
+    this.setState({ choosenImageIndex: idx });
   };
 
   savePhotos = (results) => {
@@ -21,8 +26,8 @@ class App extends Component {
         </h1>
         <div className="container">
           <SearchBar save={this.savePhotos} />
+          <Gallery preview={this.previewImage} photos={this.state.photos} />
           <Preview />
-          <Gallery photos={this.state.photos} />
         </div>
       </div>
     );
