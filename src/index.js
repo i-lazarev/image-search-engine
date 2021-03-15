@@ -18,7 +18,6 @@ class App extends Component {
     this.setState({ photos: results });
   };
   render() {
-    console.log(this.state.photos);
     return (
       <div>
         <h1 style={{ textAlign: "center", color: "grey" }}>
@@ -26,8 +25,14 @@ class App extends Component {
         </h1>
         <div className="container">
           <SearchBar save={this.savePhotos} />
+          {this.state.photos.length && this.state.choosenImageIndex !== null ? (
+            <Preview
+              photoUrl={
+                this.state.photos[this.state.choosenImageIndex].largeImageURL
+              }
+            />
+          ) : null}
           <Gallery preview={this.previewImage} photos={this.state.photos} />
-          <Preview />
         </div>
       </div>
     );
